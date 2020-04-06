@@ -1,0 +1,4 @@
+/home/ubuntu/spring-sample/src/main/java/com/autoscaler/task/TaskApplication.java
+/home/ubuntu/spring-sample/src/main/java/com/autoscaler/task/model/Tutorial.java
+/home/ubuntu/spring-sample/src/main/java/com/autoscaler/task/collector/TutorialController.java
+/home/ubuntu/spring-sample/src/main/java/com/autoscaler/task/repository/TutorialRepository.java
