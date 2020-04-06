@@ -1,11 +1,14 @@
 package com.autoscaler.task.model;
 import org.springframework.data.annotation.Id;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.capitalone.dashboard.model.Collector;
+
 @Document(collection = "tutorials")
-public class Tutorial {
+public class Tutorial extends Collector{
 	 @Id
-	  private String id;
+	  private String pid;
 
 	  private String title;
 	  private String description;
@@ -20,9 +23,8 @@ public class Tutorial {
 	    this.description = description;
 	    this.published = published;
 	  }
-
-	  public String getId() {
-	    return id;
+	  public String getpId() {
+	    return pid;
 	  }
 	  public String getTitle() {
 		    return title;
@@ -49,7 +51,7 @@ public class Tutorial {
 		  }
 		  @Override
 		  public String toString() {
-		    return "Tutorial [id=" + id + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
+		    return "Tutorial [id=" + pid + ", title=" + title + ", desc=" + description + ", published=" + published + "]";
 		  }
 
 }
