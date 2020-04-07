@@ -1,29 +1,24 @@
 package com.autoscaler.task.collector;
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.TaskScheduler;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.autoscaler.task.model.Tutorial;
 import com.autoscaler.task.repository.TutorialRepository;
-import com.capitalone.dashboard.collector.CollectorTask;
-import com.capitalone.dashboard.model.CollectorType;
-import com.capitalone.dashboard.repository.BaseCollectorRepository;
+
 
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api")
-public class TutorialController extends CollectorTask<Tutorial> {
-	protected TutorialController(TaskScheduler taskScheduler, String collectorName) {
-		super(taskScheduler, collectorName);
-		// TODO Auto-generated constructor stub
-	}
+public class TutorialController {
+	
 
 	@Autowired
 	  TutorialRepository tutorialRepository;
@@ -60,14 +55,7 @@ public class TutorialController extends CollectorTask<Tutorial> {
 		  }
 	    
 	  }
-	  @Override
-	  public Tutorial getCollector() {
-		  Tutorial tutorial = new Tutorial();
-		  tutorial.setCollectorType(CollectorType.Build);
-		  tutorial.setName(tutorial.getTitle());
-		  tutorial.setEnabled(true);
-		  return  tutorial;
-	  }
+	 
 	  
 	  @PostMapping("/tutorials")
 	  public ResponseEntity<Tutorial> createTutorial(@RequestBody Tutorial tutorial) {
@@ -130,22 +118,6 @@ public class TutorialController extends CollectorTask<Tutorial> {
 	    
 	  }
 
-	@Override
-	public BaseCollectorRepository<Tutorial> getCollectorRepository() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public String getCron() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void collect(Tutorial collector) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

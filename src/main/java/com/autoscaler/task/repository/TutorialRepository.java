@@ -9,4 +9,5 @@ import com.autoscaler.task.model.Tutorial;
 	  List<Tutorial> findByTitleContaining(String title);
 	  List<Tutorial> findByPublished(boolean published);
 	}
+	
 

@@ -3,10 +3,9 @@ import org.springframework.data.annotation.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.capitalone.dashboard.model.Collector;
 
 @Document(collection = "tutorials")
-public class Tutorial extends Collector{
+public class Tutorial {
 	 @Id
 	  private String pid;
 
