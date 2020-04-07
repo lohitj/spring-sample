@@ -1,0 +1,33 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Autoscale POC</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        alert("Welcome to JavaScript Tutorial");
+        var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://ec2-52-91-107-227.compute-1.amazonaws.com:8080/api/tutorials",
+  "method": "GET",
+  "headers": {
+          "access-control-allow-origin": "*",
+          "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+    "content-type": "application/json",
+              "cache-control": "no-cache",
+  }
+}
+
+$.ajax(settings).done(function (response,data) {
+ console.log(response);
+        alert("Data: " + data + "\nStatus: ");
+         $('#divResult').html('Title from response:    '
+            + response[0].title + '   and  description from response:      ' + response[0].description);
+});
+    </script>
+    <h2>
+    <div id="divResult"></div>
+    </h2>
+  </body>
+</html>
